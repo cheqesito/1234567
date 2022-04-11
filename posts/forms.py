@@ -1,5 +1,9 @@
 from django import forms
 from .models import Category, Post
+from ckeditor.fields import RichTextField
+
+from ckeditor.fields import RichTextFormField
+
 class PostForm(forms.ModelForm):
      class Meta:
         model = Post
@@ -9,6 +13,7 @@ class PostForm(forms.ModelForm):
            'subtitle': forms.TextInput(attrs={'class':'form-control'}),
            'category': forms.Select(attrs={'class':'form-control'}),
            'content': forms.Textarea(attrs={'class':'form-control'}),
+           
            'content_image': forms.FileInput(attrs={'class':'form-control'}),
            
         }
@@ -29,3 +34,6 @@ class CategoryForm(forms.ModelForm):
         labels = {
            'name': 'Nombre',
         }
+
+class CkEditorForm(forms.Form):
+    content = RichTextFormField()

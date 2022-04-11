@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'posts',
     'homepage',
     'users',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -106,4 +107,11 @@ LOGIN_URL = '/accounts/login/'      # Tengo un if user.is_authenticated para no 
 
 MEDIA_URL = '/media/'                           # Config para guardar imagenes
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+    },
+}
 

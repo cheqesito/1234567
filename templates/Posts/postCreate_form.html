@@ -10,7 +10,9 @@
             <h2 class="mb-3">Crear Post</h2>
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                <strong>{{form.as_p}}</strong>
+                <strong>
+                    {{form.media}}
+                    {{form.as_p}}</strong>
                 <div>
                     <button type="submit" class="btn btn-primary">Guardar</button>
                     <a class="btn btn-secondary" href="{% url 'post:list'%}"> Salir sin guardar </a>
